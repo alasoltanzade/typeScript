@@ -42,4 +42,49 @@ const app = express();
  
 app.get("/", function (req, res) {
   res.sendfile()
+},
+
+function test (){
+    console.log(32)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
