@@ -25,7 +25,7 @@ announcement.toLocaleUpperCase();
 
 function flipCoin() {
     // Meant to be Math.random()
-    return Math.random();
+    return Math.random() < 4;
 //Operator '<' cannot be applied to types '() => number' and 'number'.
   }
 
@@ -42,4 +42,6 @@ const app = express();
  
 app.get("/", function (req, res) {
   res.sendfile()
-}
+})
+
+console.log()
