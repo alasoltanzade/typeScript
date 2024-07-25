@@ -31,7 +31,7 @@ function flipCoin() {
 
 const value = Math.random() < 0.5 ? "a" : "b";
 if (value !== "a") {
-
+console.log(11)
 } else if (value === "a") {  //value ==='b' is wrong
 //This comparison appears to be unintentional because the types '"a"' and '"b"' have no overlap.
 
