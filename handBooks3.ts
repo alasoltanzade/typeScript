@@ -255,4 +255,108 @@ function f1(a: any) {
   }
 
 
+
+  function safeParse(s: string): unknown {
+    return JSON.parse(s);
+  }
+  // Need to be careful with 'obj'!
+  const obj3 = safeParse("someRandomString");
+
+
+
+//Some functions never return a value:
+  function fail(msg: string): never {
+    throw new Error(msg);
+  }
   
+
+
+
+//never also appears when TypeScript determines there’s nothing left in a union.
+  function fne(x: string | number) {
+    if (typeof x === "string") {
+      // do something
+    } else if (typeof x === "number") {
+      // do something else
+    } else {
+      x; // has type 'never'!
+    }
+  }
+  
+
+//Function
+function doSomething123(f: Function) {
+  return f(1, 2, 3);
+}
+
+
+//Rest Parameters
+function multiply(n: number, ...m: number[]) {
+  return m.map((x) => n * x);
+}
+// 'a' gets value [10, 20, 30, 40]
+const ash = multiply(10, 1, 2, 3, 4);
+
+//rest arguments
+const arr3 = [1,2,3,];
+const arr4 = [4,5,6];
+arr3.push(...arr4);
+
+const args = [8, 5] as const;
+const angle = Math.atan2(...args);
+
+
+// Inferred as 2-length tuple
+const args1 = [8, 5] as const;
+// OK
+const angle2 = Math.atan2(...args);
+
+
+//Parameter Destructuring
+function sum({ a, b, c }) {
+  console.log(a + b + c);
+}
+sum1({ a: 10, b: 3, c: 9 });
+function sum1({ a, b, c }: { a: number; b: number; c: number }) {
+  console.log(a + b + c);
+}
+
+// Same as prior example
+type ABC = { a: number; b: number; c: number };
+function sum3({ a, b, c }: ABC) {
+  console.log(a + b + c);
+}
+
+//Return type void
+type voidFunc = () => void;
+ 
+const f11: voidFunc = () => {
+  return true;
+};
+ 
+const f22: voidFunc = () => true;
+ 
+const f33: voidFunc = function () {
+  return true;
+};
+
+const v1 = f11();
+const v2 = f22();
+const v3 = f33();
+
+
+const src = [1, 2, 3];
+const dst = [0];
+src.forEach((el) => dst.push(el));
+
+function f44(): void {
+  // @ts-expect-error
+  return true;
+}
+ 
+const f55 = function (): void {
+  // @ts-expect-error
+  return true;
+};
+
+console.log("9 mordad =)")
