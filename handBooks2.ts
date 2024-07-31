@@ -31,7 +31,7 @@ handleRequest(req2.url, req2.method);
 
 
 //Just like checking for undefined before using an optional property, we can use narrowing to check for values that might be null
-function doSomething(x: string | null) {
+function doSomething1(x: string | null) {
     if (x === null) {
       // do nothing
     } else {
