@@ -360,3 +360,5 @@ const f55 = function (): void {
 };
 
 console.log("9 mordad =)")
+
+  
