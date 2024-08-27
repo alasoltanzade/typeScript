@@ -44,6 +44,7 @@ type Age3 = Person[key];
 
 
 //Conditional Types
+
 interface Animal {
     live(): void;
 }
