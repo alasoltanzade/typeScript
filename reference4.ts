@@ -163,6 +163,7 @@ declare enum Enum2 {
 }
 
 
+
 //Objects vs Enums
 const enum EDirection {
     Up,
