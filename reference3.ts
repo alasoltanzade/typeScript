@@ -122,6 +122,7 @@ export class Observable<T> {
     // ... implementation left as an exercise for the reader ...
 }
 
+
 //Global augmentation
 export class Observable4<T> {
     // ... still no implementation ...
