@@ -1,5 +1,5 @@
 //Triple-Slash Directives
-
+//special comments that help the TypeScript compiler understand where to find additional information
 
 //path : This directive tells the TypeScript compiler where to find another file that your current file depends on.
 /// <reference path="reference6.ts" />
