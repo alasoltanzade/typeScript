@@ -1,4 +1,7 @@
 //Type Compatibility
+//if one type can be used in place of another without causing errors
+//TypeScript looks at the structure (the properties) of a type to determine compatibility, rather than just the name.
+
 interface Square1 {
     width: number;
     height: number;
@@ -168,9 +171,16 @@ identity = reverse; // OK, because (x: any) => any matches (y: any) => any
 //Type Inference
 //Type inference in TypeScript is when the TypeScript compiler automatically figures out what type a variable is, without you explicitly telling it.
 //It’s like TypeScript using its "best guess" based on how you define and use a variable.
+
+let message1 = "Hello";  //type string
+let age5 = 20; //type number
+
+
+
 let x = [0, 1, null];
 let zoo = [new Rhino(), new Elephant(), new Snake()];
 let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()];
+
 
 window.onmousedown = function (mouseEvent) {
     console.log(mouseEvent.button);
